@@ -1,0 +1,133 @@
+﻿@using TPLOCAL1.Models
+@model Formulaire
+<head>
+    <link rel="stylesheet" href="~/resources/Form.css" />
+    <title>Formulaire</title>
+</head>
+
+<body>
+    <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+    <header>
+        <h1>Formulaire</h1>
+    </header>
+
+    <br>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index/Index">Accueil</a></li>
+            <li><a href="/Home/Index/AvisList">Liste des avis</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <form asp-action="Validation" method="post">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            Personal information
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" asp-for="Prenom" /> <br>  <span style="color:red" asp-validation-for="Prenom" class="erreur"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Forename</td>
+                        <td><input type="text" asp-for='Nom' /> <br>   <span style="color:red" asp-validation-for="Nom" class="erreur"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <select asp-for="Sexe">
+                                <option value="" disabled selected>Select a gender</option>
+                                <option value="Man">Man</option>
+                                <option value="Woman">Woman</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <br> <span style="color:red" asp-validation-for="Sexe" class="erreur"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><input type="text" asp-for="Adresse" /><br>  <span style="color:red" asp-validation-for="Adresse" class="erreur"></span> </td>
+                    </tr>
+                    <tr>
+                        <td>Zipcode</td>
+                        <td>
+                            <input type="text" asp-for="Code" placeholder="12345" /><br>
+                            <span asp-validation-for="Code" class="erreur" style="color:red"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Town</td>
+                        <td>
+                            <input type="text" asp-for="Ville" /><br>
+                            <span asp-validation-for="Ville" class="erreur" style="color:red"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <br>
+                        <td><input type="email" asp-for="Mail" placeholder="example@email.com" /> <br>  <span style="color:red" asp-validation-for="Mail" class="erreur"></span> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            Training information
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Start date training</td>
+                        <td><input type="date" max="2020-12-31" asp-for="DateDebut" /> <br>   <span style="color:red" asp-validation-for="DateDebut" class="erreur"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Type of training</td>
+                        <td>
+                            <select id="Typeoftraining" asp-for="Formation">
+                                <option value="" disabled selected>Select a course</option>
+                                <option value="Cobol Training">Cobol Training</option>
+                                <option value="Object Training">Object Training</option>
+                                <option value="Dual Skills Training">Dual Skills Training</option>
+
+                            </select><br>
+                            <span style="color:red" asp-validation-for="Formation" class="erreur"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            Training Reviews
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cobol Training</td>
+                        <td><input type="text" asp-for="AvisCOBOL" /> </td>
+                    </tr>
+                    <tr>
+                        <td>Training Purpose</td>
+                        <td><input type="text" asp-for='AvisCSharp' /> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" />
+        </form>
+    </section>
+
+</body>

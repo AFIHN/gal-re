@@ -1,0 +1,57 @@
+﻿.image {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header {
+    margin-right: 170px;
+    margin-left: 170px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav {
+    width: 150px;
+    border: 2px solid #8c014c;
+    background-color: #8c014c;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: chocolate;
+}
+
+section {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+    .tg th {
+        border: none;
+    }
+
+    .tg tbody, .tg td {
+        text-align: left;
+        border: 2px solid black;
+    }
+
+button{
+    margin-left: 50px;
+}

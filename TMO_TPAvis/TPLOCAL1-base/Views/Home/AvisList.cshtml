@@ -1,0 +1,56 @@
+﻿<head>
+    <link rel="stylesheet" href="~/resources/AvisList.css"/>
+    <title>Liste des avis</title>
+</head>
+
+<body>
+    <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+    <header>
+        <h1>Liste des avis</h1>
+    </header>
+
+    <br>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index/Index">Accueil</a></li>
+            <li><a href="/Home/Index/Form">Remplissage du formulaire</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th colspan="3">Avis sur la formation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nom</td>
+                    <td>Prénom</td>
+                    <td>Avis exprimé</td>
+                </tr>
+                @for (int i = 0; i < ViewBag.opinionList.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.opinionList[i].LastName</td>
+                        <td>@ViewBag.opinionList[i].FirstName</td>
+                        @switch (ViewBag.opinionList[i].OpinionGiven)
+                        {
+                            @case "O":
+                                <td class="oui">@ViewBag.opinionList[i].OpinionGiven</td>
+                                break;
+                            @case "N":
+                                <td class="non">@ViewBag.opinionList[i].OpinionGiven</td>
+                                break;
+                            @default:
+                                <td class="erreur">INVALID VALUE</td>
+                                break;
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+</body>

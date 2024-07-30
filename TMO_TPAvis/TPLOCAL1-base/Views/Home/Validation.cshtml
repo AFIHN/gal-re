@@ -1,0 +1,110 @@
+﻿@using TPLOCAL1.Models
+@model Formulaire
+
+
+<head>
+    <link rel="stylesheet" href="~/resources/Validation.css" />
+    <title>Formulaire</title>
+</head>
+
+
+<body>
+    <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+    <header>
+        <h1>Formulaire</h1>
+    </header>
+
+    <br>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index/Index">Accueil</a></li>
+            <li><a href="/Home/Index/AvisList">Liste des avis</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <p>
+            Votre formulaire a bien été pris en compte.
+        </p>
+
+        @{
+            var formulaire = ViewBag.formulaire;
+        }
+
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th colspan="2">Informations personnelles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nom</td>
+                    <td>@Html.DisplayFor(model => model.Nom)</td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td>@Html.DisplayFor(model => model.Prenom)</td>
+                </tr>
+                <tr>
+                    <td>Sexe</td>
+                    <td>@Html.DisplayFor(model => model.Sexe)</td>
+                </tr>
+                <tr>
+                    <td>Adresse</td>
+                    <td>@Html.DisplayFor(model => model.Adresse)</td>
+                </tr>
+                <tr>
+                    <td>Code postal</td>
+                    <td>@Html.DisplayFor(model => model.Code)</td>
+                </tr>
+                <tr>
+                    <td>Ville</td>
+                    <td>@Html.DisplayFor(model => model.Ville)</td>
+                </tr>
+                <tr>
+                    <td>Adresse mail</td>
+                    <td>@Html.DisplayFor(model => model.Mail)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th colspan="2">Informations sur la formation suivie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Date de début de formation</td>
+                    <td>@Html.DisplayFor(model => model.DateDebut)</td>
+                </tr>
+                <tr>
+                    <td>Formation suivie</td>
+                    <td>@Html.DisplayFor(model => model.Formation)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th colspan="2">Avis sur la formation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Formation COBOL</td>
+                    <td>@Html.DisplayFor(model => model.AvisCOBOL)</td>
+                </tr>
+                <tr>
+                    <td>Formation C#</td>
+                    <td>@Html.DisplayFor(model => model.AvisCSharp)</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
